@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="./estilos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Juego de dardos</title>
+  </head>
+  <h1>
+    Bienvenido a la aproximación del número PI en base a un simple juego de
+    dardos
+  </h1>
+
+  <br />
+  <h3>Tabla de datos trabajados</h3>
+  <br />
+
+  <body>
+    <!--la tabla está costruida solo con etiquetas <td> y etiquetas <script> dentro de ella -->
+    <div style="text-align: center">
+      <table border="2" width="600" heigth="600" style="margin: 0 auto">
+        <tr>
+          <!--Etiqueta <tr> que almacena la cantidad de filas que tendrá la tabla -->
+          <th>Número de iteraciones</th>
+          <th>Número de dardos lanzados</th>
+          <th>Número de dardos que cayeron en el círculo</th>
+          <th>Aproximación al Número pi</th>
+        </tr>
+
+        <tr>
+          <!--Segunda etiqueta de <tr>. Se construirá una cantidad de filas igual a la anterior
+                con la diferencia que se tendrá un codigo <script> para su creación.-->
+
+          <td>
+            <!--Etiqueta <td> mencionada anteriormente. Aquí se tiene guardado el <script> que contiene
+                    las variables declaradas y las operaciones para obtener cada valor-->
+            <script>
+              let i;
+
+              let iteracion;
+              const numeroAproxPI = [];
+
+              iteracion = prompt("Escriba el numero de iteraciones");
+
+              for (i = 1; i <= iteracion; i++) {
+                document.write("iteración:", i);
+                document.write("<br>");
+                document.write("<br>");
+              }
+              const numeroRandom = (() =>
+                Math.floor(Math.random() * (5000 - 4300) + 4300))();
+              console.log(
+                "🚀 ~ file: index.html:55 ~ numeroRandom:",
+                numeroRandom
+              );
+            </script>
+          </td>
+
+          <td>
+            <!--Segunda etiqueta <td>. Contiene los datos del ciclo for-->
+            <script>
+              let dardolanzado = 99999;
+              for (i = 1; i <= iteracion; i++) {
+                if (i <= iteracion) {
+                  document.write("", dardolanzado);
+                  document.write("<br>");
+                  document.write("<br>");
+                  dardolanzado = dardolanzado + 5500;
+                }
+              }
+            </script>
+          </td>
+          <td>
+            <!--Tercera etiqueta <td>. Contiene los datos del ciclo for-->
+            <script>
+              let dardoscirculo = 78400;
+              /* function dardoscirculo(min, max) {
+              return Math.floor(Math.random() * (max - min) + 1) + min;
+            }*/
+              for (i = 1; i <= iteracion; i++) {
+                if (i <= iteracion) {
+                  document.write("", dardoscirculo);
+                  document.write("<br>");
+                  document.write("<br>");
+
+                  dardoscirculo += numeroRandom;
+                }
+              }
+            </script>
+          </td>
+
+          <td>
+            <!--Cuarta etiqueta <td>. Contiene los datos del ciclo for-->
+            <script>
+              let dardos_circulo = 78400;
+              let dardo_lanzado = 99999;
+              var p;
+              for (i = 1; i <= iteracion; i++) {
+                if (i <= iteracion) {
+                  p = 4 * (dardos_circulo / dardo_lanzado);
+                  const total = p.toFixed(6);
+                  numeroAproxPI.push(total);
+                  document.write("", total);
+                  document.write("<br>");
+                  document.write("<br>");
+                  dardos_circulo = dardos_circulo + numeroRandom;
+                  dardo_lanzado = dardo_lanzado + 5500;
+                }
+              }
+            </script>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+    <canvas id="MiGrafica" width="auto" heigth="auto"></canvas>
+
+    <script src="grafico.js"></script>
+  </body>
+</html>
